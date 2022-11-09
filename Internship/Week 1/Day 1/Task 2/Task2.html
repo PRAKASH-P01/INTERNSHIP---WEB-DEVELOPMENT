@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Task 2</title>
+<style>
+body{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgb(232, 240, 243);
+}
+.container
+{
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 300px;
+    height: 400px;
+    background-color:white;
+    position: relative;
+    border: 2px dotted black;
+}
+    fieldset
+    {
+        font-family:Arial, Helvetica, sans-serif;
+        text-align: center;
+        border: 1px dotted black;
+    }
+    input
+    {
+        background-color: rgb(255, 212, 212);
+        width: 180px; height: 20px;
+        text-size-adjust: fixed;
+        border-radius: 0.5em;
+    }
+    button
+    {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 0.5em;
+    }   
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="content1">
+<form>
+<p>
+    <fieldset>
+        <legend><b>Location</b></legend>
+        <label for="fname">🏁 </label>
+        <input type="text" name="fname" id="fname" 
+        required minlength="4"/>
+	</p>
+<p>
+	<label>🤐  </label>
+    <input type="text" />
+</p>
+    </fieldset>
+</div>
+<div class="content2">
+<p>
+	<fieldset>
+        <legend><b>Credentials</b></legend>
+	<label>📧  </label>
+    <input type="text">
+	</p>
+<p>
+	<label>🔑  </label>
+    <input type="text">
+</p>
+    <p>
+        <label>🔒  </label>
+        <input type="text" />
+        </p>
+    </fieldset>
+<p>
+	<button type="submit">Submit</button>
+	</p>
+</div>
+    <script>
+        var fname = document.getElementById("fname");
+        fname.addEventListener("input", () => {
+          if (fname.validity.tooLong || fname.validity.tooShort || fname.validity.valueMissing) {
+            fname.setCustomValidity("Country Name must be atleast 4 characters long");
+            fname.reportValidity();
+          } else { fname.setCustomValidity(""); }
+        });
+        </script>
+</form>
+</body>
+</html>
